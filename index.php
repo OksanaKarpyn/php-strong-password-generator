@@ -1,4 +1,5 @@
  <?php 
+ //session_start();
 $lettere = isset( $_GET['lettere'])?  $_GET['lettere'] : false;
 $numeri = isset($_GET['numeri'])?$_GET['numeri'] : false ;
 $simboli = isset($_GET['simboli'])? $_GET['simboli'] : false;
@@ -13,7 +14,7 @@ simboli, boolean: se vero usa le simboli nella psw
 password, numero: lunghezza password
 */
 
-
+include __DIR__.'/folderFiles/password.php';
 
 include __DIR__ .'/folderFiles/function.php';
 
@@ -70,6 +71,13 @@ include __DIR__ .'/folderFiles/function.php';
 
  <body>
      <div class="wrapper">
+         <div class="container mb-3  pass">
+             <?php  
+             if($passwordGenerate != ''){
+                echo 'Password-generata:'.' '. $passwordGenerate;
+             }
+             ?>
+         </div>
          <div class="container pt-4">
              <form action="index.php" method="GET">
                  <div class="input-group d-flex justify-content-between">

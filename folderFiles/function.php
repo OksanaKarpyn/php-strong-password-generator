@@ -1,4 +1,5 @@
 <?php 
+include __DIR__.'/password.php';
 function paswordRandom($lettere,$numeri,$simboli,$password){
 
     $numbers = '1234567890';
@@ -26,9 +27,10 @@ function paswordRandom($lettere,$numeri,$simboli,$password){
     $stringRandom .= $characters[rand(0,strlen($characters)-1)];
    }
     
-   var_dump($stringRandom);
+   //var_dump($stringRandom);
    return $stringRandom;
 }
 paswordRandom($lettere,$numeri,$simboli,$password);
+$passwordGenerate =paswordRandom($lettere,$numeri,$simboli,$password);
 
 ?>
