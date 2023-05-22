@@ -3,6 +3,8 @@ $lettere = isset( $_GET['lettere'])?  $_GET['lettere'] : false;
 $numeri = isset($_GET['numeri'])?$_GET['numeri'] : false ;
 $simboli = isset($_GET['simboli'])? $_GET['simboli'] : false;
 $password = $_GET['password'];
+$radioSi= isset($_GET['si']);
+$radioNo =isset( $_GET['no']);
 
 /*
 lettere, boolean: se vero usa le lettere nella psw
@@ -11,36 +13,43 @@ simboli, boolean: se vero usa le simboli nella psw
 password, numero: lunghezza password
 */
 
-function paswordRandom($lettere,$numeri,$simboli,$password){
 
-    $numbers = '1234567890';
-    $lowerUpper = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $simbol = '!"£$%&/()=?\'^@#[]*';
 
-    $characters ="";
+include __DIR__ .'/folderFiles/function.php';
 
-    if($lettere){
-        //$characters = $numbers.$lowerUpper.$simbol;
-        $characters .= $lowerUpper;
-    }
-    if($numeri){
-        $characters .= $numbers;
-    }
-    if($simboli){
-        $characters .= $simbol;
-    }
+
+
+// function paswordRandom($lettere,$numeri,$simboli,$password){
+
+//     $numbers = '1234567890';
+//     $lowerUpper = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+//     $simbol = '!"£$%&/()=?\'^@#[]*';
+
+//     $characters ="";
+
+//     if($lettere){
+//         //$characters = $numbers.$lowerUpper.$simbol;
+//         $characters .= $lowerUpper;
+//     }
+//     if($numeri){
+//         $characters .= $numbers;
+//     }
+//     if($simboli){
+//         $characters .= $simbol;
+//     }
     
-    var_dump($characters);
+//     var_dump($characters);
 
-   $stringRandom= '';
-   for($i= 0; $i< $password; $i++){
+//    $stringRandom = '';
+//    for($i= 0; $i< $password; $i++){
     
-    $stringRandom .= $characters[rand(0,strlen($characters)-1)];
-   }
-   var_dump($stringRandom);
-   return $stringRandom;
-}
-paswordRandom($lettere,$numeri,$simboli,$password)
+//     $stringRandom .= $characters[rand(0,strlen($characters)-1)];
+//    }
+    
+//    var_dump($stringRandom);
+//    return $stringRandom;
+// }
+
 ?>
 
 
